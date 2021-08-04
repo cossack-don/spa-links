@@ -29,15 +29,15 @@ a:hover {
 }
 /* id app */
 #app {
-  height: 100vh;
+  height: 100%;
   background: linear-gradient(to bottom right, #6ae0ab, #0b224e);
   font-family: "Roboto", sans-serif;
 }
 
 /* media adaptiv */
-@media screen and (max-width: 850px) {
+/* @media screen and (max-width: 850px) {
   #app {
     height: 100%;
   }
-}
+} */
 </style>

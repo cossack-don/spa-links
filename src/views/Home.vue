@@ -2,24 +2,28 @@
   <div class="home">
     <!-- прелоадер -->
     <Preloader v-if="loading" />
-    <!-- списки ссылок -->
-    <div v-else class="wrapper-links">
-      <ul v-for="(item, index) in arrs" :key="index" class="bg-list">
-        <!-- li template -->
-        <ItemLink
-          class="bg-list__item"
-          v-for="(item, index) in arrs[index]"
-          :key="index"
-          :textUrl="item.name"
-          :urlLink="item.url"
-        />
-      </ul>
-    </div>
-    <!-- btns macros -->
-    <div class="wrapper-macros">
-      <button class="btn-preset" @click="handlerOpenPresetLinksJob">
-        Preset Job
-      </button>
+
+    <div v-else class="main-wrapper">
+      <!-- lists -->
+      <div class="wrapper-links">
+        <ul v-for="(item, index) in arrs" :key="index" class="bg-list">
+          <!-- li template -->
+          <ItemLink
+            class="bg-list__item"
+            v-for="(item, index) in arrs[index]"
+            :key="index"
+            :textUrl="item.name"
+            :urlLink="item.url"
+          />
+        </ul>
+      </div>
+
+      <!-- btns macros -->
+      <div class="wrapper-macros">
+        <button class="btn-preset" @click="handlerOpenPresetLinksJob">
+          Preset Job
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -74,6 +78,7 @@ export default {
       this.macrosOpenLinksPreset(this.arrayMacrosJob);
     },
   },
+  // хук
   mounted() {
     this.getData();
   },
@@ -122,5 +127,6 @@ export default {
   display: flex;
   justify-content: center;
   margin-top: 25px;
+  padding-bottom: 25px;
 }
 </style>
